@@ -91,11 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
       msgDiv.innerHTML = `
         <div class="msg-avatar">
           <svg viewBox="0 0 36 36" fill="none" class="bot-mini-svg">
-            <rect width="36" height="36" rx="10" fill="#1E293B"/>
-            <circle cx="12" cy="16" r="3" fill="#06B6D4"/>
-            <circle cx="24" cy="16" r="3" fill="#06B6D4"/>
-            <path d="M12 24C14 27 22 27 24 24" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M18 4V8" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+            <rect width="36" height="36" rx="10" fill="#250E12" stroke="#EF4444" stroke-width="1.5"/>
+            <circle cx="12" cy="16" r="3" fill="#EF4444"/>
+            <circle cx="24" cy="16" r="3" fill="#EF4444"/>
+            <path d="M12 24C14 27 22 27 24 24" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M18 4V8" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="msg-body">
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
       removeTypingIndicator();
       addMessage(
         "bot",
-        `¡Hola! Soy el asistente virtual de **Hernán Ariel Luciano**. 🤖✨\n\nPuedo responder tus dudas sobre sus **servicios de diseño web, mantenimiento, QA/testing, experiencia en Telecom** o ayudarte a solicitar una cotización.`
+        `¡Hola! Soy el asistente virtual de **Hernán Luciano**. 🤖✨\n\nPuedo responder tus dudas sobre sus **servicios de diseño web, mantenimiento, QA/testing, experiencia en Telecom** o ayudarte a solicitar una cotización.`
       );
       renderQuickChips();
     }, 600);

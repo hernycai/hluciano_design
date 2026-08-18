@@ -1,0 +1,6 @@
+{
+  "name": "Hernán Luciano Portfolio",
+  "description": "Sitio web y portfolio profesional de Hernán Luciano: Diseño Web, Mantenimiento IT y QA Manual con asistente virtual interactivo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,4 +1,4 @@
-# 🌐 Landing Page Personal - Hernán Ariel Luciano
+# 🌐 Landing Page Personal - Hernán Luciano
 
 Landing page personal y comercial desarrollada con estándares modernos de UI/UX, optimizada para conversión (CRO), SEO técnico y libre de errores gracias a un enfoque integral de **QA Testing**.
 

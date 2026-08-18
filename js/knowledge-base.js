@@ -1,10 +1,10 @@
 /**
- * Base de Conocimiento para el Asistente Virtual / Mascota de Hernán Ariel Luciano
+ * Base de Conocimiento para el Asistente Virtual / Mascota de Hernán Luciano
  * Basado en CV oficial, perfil de GitHub (hernycai) y LinkedIn.
  */
 
 const HERNAN_INFO = {
-  name: "Hernán Ariel Luciano",
+  name: "Hernán Luciano",
   role: "Especialista en Diseño Web, Mantenimiento & QA Manual / Testing",
   phone: "+54 9 11 6869-4047",
   whatsappUrl: "https://wa.me/5491168694047",
@@ -50,7 +50,7 @@ const KNOWLEDGE_BASE = [
     category: "perfil",
     keywords: ["experiencia", "telecom", "trayectoria", "años", "cv", "curriculum", "historia", "quien es", "background"],
     questionTitle: "¿Cuál es la experiencia y trayectoria de Hernán?",
-    response: `Hernán cuenta con **más de 19 años de experiencia técnica** continua en **Telecom Argentina** (desde 2006):\n\n• Especialista en soporte técnico avanzado, resolución de fallas y operaciones masivas.\n• Formación integral en **QA Manual (Alkemy, 230hs)**, Python, Salesforce e Inteligencia Artificial.\n• Combina visión técnica profunda con foco en la satisfacción del usuario final.`
+    response: `Hernán cuenta con **más de 20 años de experiencia técnica** continua en **Telecom Argentina** (desde 2006):\n\n• Especialista en soporte técnico avanzado, resolución de fallas y operaciones masivas.\n• Formación integral en **QA Manual (Alkemy, 230hs)**, Python, Salesforce e Inteligencia Artificial.\n• Combina visión técnica profunda con foco en la satisfacción del usuario final.`
   },
   {
     id: "tecnologias",
