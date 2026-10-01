@@ -174,6 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Renderizar botones de consultas rápidas
   function renderQuickChips() {
     const chips = [
+      { text: "🚀 Trabajos Realizados", query: "¿Qué proyectos o trabajos has realizado?" },
       { text: "💻 Servicios que ofrece", query: "¿Qué servicios ofreces?" },
       { text: "🔍 QA y Pruebas", query: "¿Qué incluye el servicio de QA y Testeo?" },
       { text: "🛡️ Mantenimiento Web", query: "¿Cómo funciona el mantenimiento de páginas web?" },

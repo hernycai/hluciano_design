@@ -157,4 +157,148 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // 7. Carrusel Interactivo de Proyectos Realizados
+  const carouselTrack = document.getElementById("carouselTrack");
+  const carouselPrevBtn = document.getElementById("carouselPrevBtn");
+  const carouselNextBtn = document.getElementById("carouselNextBtn");
+  const carouselDots = document.querySelectorAll("#carouselDots .dot");
+  const carouselViewport = document.getElementById("carouselViewport");
+
+  if (carouselTrack && carouselPrevBtn && carouselNextBtn) {
+    let currentSlide = 0;
+    const slides = carouselTrack.querySelectorAll(".carousel-slide");
+    const totalSlides = slides.length;
+    let autoPlayTimer = null;
+
+    function getVisibleSlides() {
+      return window.innerWidth <= 768 ? 1 : 2;
+    }
+
+    function getMaxIndex() {
+      const visible = getVisibleSlides();
+      return Math.max(0, totalSlides - visible);
+    }
+
+    function updateCarousel(animate = true) {
+      const maxIndex = getMaxIndex();
+      if (currentSlide > maxIndex) currentSlide = maxIndex;
+      if (currentSlide < 0) currentSlide = 0;
+
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = 28; // 1.75rem en px
+      const moveDistance = currentSlide * (slideWidth + gap);
+
+      carouselTrack.style.transition = animate ? "transform 0.55s cubic-bezier(0.16, 1, 0.3, 1)" : "none";
+      carouselTrack.style.transform = `translateX(-${moveDistance}px)`;
+
+      carouselDots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      const maxIndex = getMaxIndex();
+      if (currentSlide >= maxIndex) {
+        currentSlide = 0;
+      } else {
+        currentSlide++;
+      }
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      const maxIndex = getMaxIndex();
+      if (currentSlide <= 0) {
+        currentSlide = maxIndex;
+      } else {
+        currentSlide--;
+      }
+      updateCarousel();
+    }
+
+    carouselNextBtn.addEventListener("click", () => {
+      nextSlide();
+      restartAutoplay();
+    });
+
+    carouselPrevBtn.addEventListener("click", () => {
+      prevSlide();
+      restartAutoplay();
+    });
+
+    carouselDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const index = parseInt(dot.getAttribute("data-index"), 10);
+        currentSlide = index;
+        updateCarousel();
+        restartAutoplay();
+      });
+    });
+
+    // Soporte táctil / Swipe para móviles y tablets
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (carouselViewport) {
+      carouselViewport.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+      }, { passive: true });
+
+      carouselViewport.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+        }
+        startAutoplay();
+      }, { passive: true });
+
+      carouselViewport.addEventListener("mouseenter", stopAutoplay);
+      carouselViewport.addEventListener("mouseleave", startAutoplay);
+    }
+
+    // Navegación con teclado cuando está en foco
+    document.addEventListener("keydown", (e) => {
+      const section = document.getElementById("proyectos");
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (inView) {
+        if (e.key === "ArrowLeft") {
+          prevSlide();
+          restartAutoplay();
+        } else if (e.key === "ArrowRight") {
+          nextSlide();
+          restartAutoplay();
+        }
+      }
+    });
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoPlayTimer = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoplay() {
+      if (autoPlayTimer) clearInterval(autoPlayTimer);
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    window.addEventListener("resize", () => {
+      updateCarousel(false);
+    });
+
+    startAutoplay();
+    setTimeout(() => updateCarousel(false), 100);
+  }
 });

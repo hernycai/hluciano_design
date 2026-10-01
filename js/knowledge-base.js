@@ -93,6 +93,13 @@ const KNOWLEDGE_BASE = [
     keywords: ["certificados", "certificaciones", "cursos", "estudios", "titulos", "educacion"],
     questionTitle: "¿Qué certificaciones y cursos tiene?",
     response: `🎓 **Certificaciones destacadas:**\n\n• **Tester QA Manual (230 hs):** Alkemy / Telecom Argentina.\n• **Administrador Salesforce & Python:** Talento Tech.\n• **Inteligencia Artificial & Productividad:** Google / Open Academy y Copilot.\n• **Programa Construí Tu Futuro & Ciberseguridad:** Ministerio de Educación CABA.\n• **Idiomas:** Inglés B1 Intermedio.`
+  },
+  {
+    id: "proyectos-realizados",
+    category: "portfolio",
+    keywords: ["proyectos", "trabajos", "trabajos realizados", "portfolio", "ejemplos", "paginas hechas", "acv", "brisa", "afrodita", "matemas", "webs hechas", "muestras", "casos de exito"],
+    questionTitle: "¿Qué proyectos o trabajos ha realizado Hernán?",
+    response: `🚀 **Proyectos destacados en producción:**\n\n1. 🧠 **Brisa — Rehabilitación Cognitiva y Motora (ACV v2):** Web App terapéutica con juegos cognitivos, ejercicios físicos animados y síntesis de voz interactiva.\n👉 [juego-acv2.vercel.app](https://juego-acv2.vercel.app/)\n\n2. ⚡ **Rehabilitación Cognitiva — Oscar (ACV v1):** Plataforma adaptada con ejercicios neurológicos y tiempos de reacción.\n👉 [juego-acv.vercel.app](https://juego-acv.vercel.app/)\n\n3. 🌸 **Afrodita | Belleza Consciente:** Web comercial para estética facial/corporal con catálogo de tratamientos y reservas vía WhatsApp.\n👉 [afrodita-belleza.vercel.app](https://afrodita-belleza.vercel.app/)\n\n4. 🔢 **Mate+ | Aprendé matemáticas a tu ritmo:** Web App educativa y lúdica con lecciones dinámicas y desafíos cronometrados.\n👉 [matemas2.vercel.app](https://matemas2.vercel.app/)\n\n*¡Podés verlos e interactuar con ellos en el carrusel en el centro de la página!*`
   }
 ];
 
