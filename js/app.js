@@ -114,8 +114,14 @@ document.addEventListener("DOMContentLoaded", () => {
         fullMessage
       )}`;
 
-      // Abrir WhatsApp en nueva pestaña
-      window.open(waUrl, "_blank");
+      // Abrir WhatsApp en nueva pestaña de forma compatible con iframes
+      const waLink = document.createElement("a");
+      waLink.href = waUrl;
+      waLink.target = "_blank";
+      waLink.rel = "noopener noreferrer";
+      document.body.appendChild(waLink);
+      waLink.click();
+      waLink.remove();
 
       // Notificación de confirmación
       showToast("¡Redirigiendo a WhatsApp con tu consulta!", "success");

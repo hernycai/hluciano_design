@@ -313,10 +313,9 @@ h1, h2, h3, h4 {
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 3.5rem;
-  align-items: center;
+  display: block;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .hero-status-pill {
@@ -363,7 +362,7 @@ h1, h2, h3, h4 {
   font-size: 1.15rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
-  max-width: 580px;
+  max-width: 780px;
 }
 
 .hero-actions {
@@ -594,10 +593,9 @@ h1, h2, h3, h4 {
 }
 
 .qa-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
-  align-items: center;
+  display: block;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 .qa-content h2 {
@@ -1061,9 +1059,20 @@ textarea.form-control {
   50% { transform: translateY(-7px); }
 }
 
+@keyframes mascotBreathe {
+  0%, 100% {
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.52), 0 0 16px rgba(249, 115, 22, 0.35);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.13);
+    box-shadow: 0 16px 42px rgba(239, 68, 68, 0.75), 0 0 28px rgba(249, 115, 22, 0.58);
+  }
+}
+
 .mascot-trigger-btn:hover {
-  transform: scale(1.08) translateY(-4px);
-  box-shadow: 0 12px 35px rgba(239, 68, 68, 0.65), 0 0 20px rgba(249, 115, 22, 0.4);
+  animation: mascotBreathe 2.2s ease-in-out infinite;
+  border-color: #F97316;
 }
 
 .mascot-svg {
