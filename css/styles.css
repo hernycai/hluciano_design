@@ -1566,74 +1566,98 @@ textarea.form-control {
   border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-/* Área visual y mockup interactivo */
-.project-visual {
+/* Vista previa real de cada web */
+.project-preview-frame {
   position: relative;
-  height: 190px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 1.25rem 1rem 1.25rem;
+  display: block;
+  height: 230px;
   overflow: hidden;
+  background: #080304;
   border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
 }
 
-.bg-gradient-acv2 {
-  background: radial-gradient(circle at 50% 30%, rgba(20, 184, 166, 0.35) 0%, rgba(13, 19, 34, 0.95) 75%);
+.project-img-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  filter: brightness(0.96) contrast(1.02);
 }
 
-.bg-gradient-acv1 {
-  background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.35) 0%, rgba(13, 19, 34, 0.95) 75%);
+.project-card:hover .project-img-preview {
+  transform: scale(1.06);
+  filter: brightness(1.05) contrast(1.05);
 }
 
-.bg-gradient-afrodita {
-  background: radial-gradient(circle at 50% 30%, rgba(244, 63, 94, 0.35) 0%, rgba(20, 10, 15, 0.95) 75%);
+.project-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 5, 6, 0.88) 0%, rgba(10, 5, 6, 0.3) 50%, transparent 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease, backdrop-filter 0.35s ease;
+  backdrop-filter: blur(2px);
+  z-index: 2;
 }
 
-.bg-gradient-matemas {
-  background: radial-gradient(circle at 50% 30%, rgba(14, 165, 233, 0.35) 0%, rgba(15, 23, 42, 0.95) 75%);
+.project-card:hover .project-preview-overlay {
+  opacity: 1;
 }
 
-.project-badge-pill {
-  align-self: flex-start;
+.preview-cta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--accent-red), var(--accent-flame));
+  color: #FFFFFF;
+  font-size: 0.825rem;
+  font-weight: 700;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.45);
+  transform: translateY(10px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .preview-cta-chip {
+  transform: translateY(0);
+}
+
+.project-floating-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(10, 5, 6, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: var(--glass-blur);
+  color: #FFFFFF;
   font-size: 0.72rem;
   font-weight: 600;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: var(--text-primary);
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full);
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.project-visual-icon {
-  font-size: 3.5rem;
-  line-height: 1;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-visual-icon {
-  transform: scale(1.15) rotate(4deg);
-}
-
-.project-tech-badges {
+.project-tags-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.4rem;
-  z-index: 1;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
 }
 
-.project-tech-badges span {
-  font-size: 0.7rem;
+.project-tag-pill {
+  font-size: 0.72rem;
   font-family: var(--font-mono);
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-secondary);
-  padding: 0.15rem 0.55rem;
-  border-radius: 4px;
+  color: var(--accent-flame);
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
 }
 
 /* Cuerpo de la card */
@@ -1822,7 +1846,7 @@ textarea.form-control {
     height: 40px;
   }
 
-  .project-visual {
-    height: 160px;
+  .project-preview-frame {
+    height: 180px;
   }
 }
